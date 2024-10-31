@@ -69,21 +69,28 @@ gsap.to(sphere.position, {
     repeat: -1,
     ease: "linear",
     keyframes: [
-        { x: 0, z: 4 },
-        { x: -4, z: 4 },
-        { x: 0, z: 4 },
+        { x: 0, z: 4 },         
+        { x: -1, z: 7 },        
+        { x: -6, z: 7 },        
+        { x: -1, z: 7 },      
+        { x: 0, z: 4 }, 
+        { x: 0, z: -5 },        
+        { x: -4, z: -5 },      
+        { x: -5, z: -6 },       
+        { x: -4, z: -5 },       
         { x: 0, z: -5 },
-        { x: -4, z: -5 },
-        { x: 0, z: -5 },
-        { x: 0, z: -3 },
-        { x: 2, z: -3 },
-        { x: 5, z: -3 },
-        { x: 6, z: -1 },
-        { x: 2, z: -3 },
-        { x: 0, z: -3 },
-        { x: 0, z: 0 },
+        { x: 0, z: -3 },       
+        { x: 2, z: -3 },         
+        { x: 5, z: -3 },         
+        { x: 6, z: -6 },       
+        { x: 5, z: -3 },        
+        { x: 2, z: -3 },       
+        { x: 0, z: -3 },  
+        { x: 0, z: 0 },        
     ],
 });
+
+
 
 window.addEventListener("resize", () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
