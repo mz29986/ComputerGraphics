@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Modified Camera Position -->
+      <a-entity position="0 1.7 1.8">
+        <a-camera wasd-controls look-controls></a-camera>
+      </a-entity>
+
+      <!-- Virtual Room Container -->
+      <a-box position="0 1.8 0" scale="7.8 4.2 7.8" material="side: back">
+        <a-plane material="src: textures/ceiling-top-sides.jpg; repeat: 2.2 1.1" position="0.49 0 0" rotation="0 -90 0" scale="1 1 1"></a-plane>
+        <a-plane material="src: textures/ceiling-top-sides.jpg; repeat: 2.2 1.1" position="-0.49 0 0" rotation="0 90 0" scale="1 1 1"></a-plane>
+        <a-plane material="src: textures/ceiling-top-sides.jpg; repeat: 2.2 2.2" position="0 0.49 0" rotation="90 0 0" scale="1 1 1"></a-plane>
+        <a-plane material="src: textures/tiles.jpg; repeat: 2.2 2.2" position="0 -0.49 0" rotation="-90 0 0" scale="1 1 1"></a-plane>
+        <a-plane material="src: textures/ceiling-top-sides.jpg; repeat: 2.2 1.1" position="0 0 0.49" rotation="0 180 0" scale="1 1 1"></a-plane>
+        <a-plane material="src: textures/ceiling-top-sides.jpg; repeat: 2.2 1.1" position="0 0 -0.49" scale="1 1 1"></a-plane>
+      </a-box>
+
+      <!-- Classroom Window -->
+      <a-entity position="0 1.8 -3.85">
+        <a-box width="2.2" height="1.6" depth="0.1" material="src: textures/window.jpg; transparent: true; opacity: 0.8"></a-box>
+        <a-box width="2.4" height="1.8" depth="0.12" material="color: black" position="0 0 -0.02"></a-box>
+      </a-entity>
+      
+      <!-- Classroom Door -->
+      <a-entity position="-3.85 1.25 2.5" rotation="0 90 0">
+        <a-box width="1.3" height="3" depth="0.1" material="src: textures/door.jpg"></a-box>
+      </a-entity>
+
+         <!-- Study Area Setup -->
+      <a-entity id="classroom-furniture">
+        <!-- Front Row -->
+        <a-entity position="-1.8 0 -2.0">
+          <a-entity gltf-model="models/computer_desk.glb" scale="0.90 0.90 0.90"></a-entity>
+          <a-entity gltf-model="models/school_classroom_chair.glb" position="-0.35 0 -0.55" scale="1.2 1.2 1.2"></a-entity>
+          <a-entity gltf-model="models/school_classroom_chair.glb" position="0.35 0 -0.55" scale="1.2 1.2 1.2"></a-entity>
+        </a-entity>
+        <a-entity position="1.8 0 -2.0">
+          <a-entity gltf-model="models/computer_desk.glb" scale="0.90 0.90 0.90"></a-entity>
+          <a-entity gltf-model="models/school_classroom_chair.glb" position="-0.35 0 -0.55" scale="1.2 1.2 1.2"></a-entity>
+          <a-entity gltf-model="models/school_classroom_chair.glb" position="0.35 0 -0.55" scale="1.2 1.2 1.2"></a-entity>
+        </a-entity>
+        <!-- Middle Row -->
+        <a-entity position="-1.8 0 0">
+          <a-entity gltf-model="models/computer_desk.glb" scale="0.90 0.90 0.90"></a-entity>
+          <a-entity gltf-model="models/school_classroom_chair.glb" position="-0.35 0 -0.55" scale="1.2 1.2 1.2"></a-entity>
+          <a-entity gltf-model="models/school_classroom_chair.glb" position="0.35 0 -0.55" scale="1.2 1.2 1.2"></a-entity>
+        </a-entity>
+        <a-entity position="1.8 0 0">
+          <a-entity gltf-model="models/computer_desk.glb" scale="0.90 0.90 0.90"></a-entity>
+          <a-entity gltf-model="models/school_classroom_chair.glb" position="-0.35 0 -0.55" scale="1.2 1.2 1.2"></a-entity>
+          <a-entity gltf-model="models/school_classroom_chair.glb" position="0.35 0 -0.55" scale="1.2 1.2 1.2"></a-entity>
+        </a-entity>
+        <!-- Back Row -->
+        <a-entity position="-1.8 0 2.0">
+          <a-entity gltf-model="models/computer_desk.glb" scale="0.90 0.90 0.90"></a-entity>
+          <a-entity gltf-model="models/school_classroom_chair.glb" position="-0.35 0 -0.55" scale="1.2 1.2 1.2"></a-entity>
+          <a-entity gltf-model="models/school_classroom_chair.glb" position="0.35 0 -0.55" scale="1.2 1.2 1.2"></a-entity>
+        </a-entity>
+        <a-entity position="1.8 0 2.0">
+          <a-entity gltf-model="models/computer_desk.glb" scale="0.90 0.90 0.90"></a-entity>
+          <a-entity gltf-model="models/school_classroom_chair.glb" position="-0.35 0 -0.55" scale="1.2 1.2 1.2"></a-entity>
+          <a-entity gltf-model="models/school_classroom_chair.glb" position="0.35 0 -0.55" scale="1.2 1.2 1.2"></a-entity>
+        </a-entity>
+      </a-entity>
+
+      <!-- Ceiling Fixtures -->
+      <!-- Left Light -->
+      <a-entity position="-1.6 3.3 0">
+        <a-cylinder color="#1a1a1a" height="0.28" radius="0.14" position="0 0 0"></a-cylinder>
+        <a-cylinder color="#1a1a1a" height="0.45" radius="0.018" position="0 0.23 0"></a-cylinder>
+        <a-light type="spot" color="#FFF6E6" intensity="3.6" angle="72" penumbra="1.75" decay="2" distance="7.5" position="0 -0.14 0" rotation="-90 0 0"></a-light>
+        <a-light type="point" color="#FFF6E6" intensity="2.18" decay="2" distance="1.8" position="0 -0.14 0"></a-light>
+      </a-entity>
+
+      <!-- Right Light -->
+      <a-entity position="1.6 3.3 0">
+        <a-cylinder color="#1a1a1a" height="0.28" radius="0.14" position="0 0 0"></a-cylinder>
+        <a-cylinder color="#1a1a1a" height="0.45" radius="0.018" position="0 0.23 0"></a-cylinder>
+        <a-light type="spot" color="#FFF6E6" intensity="3.6" angle="72" penumbra="1.75" decay="2" distance="7.5" position="0 -0.14 0" rotation="-90 0 0"></a-light>
+        <a-light type="point" color="#FFF6E6" intensity="2.18" decay="2" distance="1.8" position="0 -0.14 0"></a-light>
+      </a-entity>
+
+      <!-- Room Ambient Light -->
+      <a-light type="ambient" color="#F0F5FF" intensity="1"></a-light>
+
+      <!-- Window Light System -->
+      <!-- Primary Window Illumination -->
+      <a-light type="spot" color="#F8FAFF" intensity="1.7" angle="32" penumbra="0.35" decay="1.4" distance="11" position="-0.7 2.6 -3.7" rotation="-85 0 0"></a-light>
+      <a-light type="spot" color="#F8FAFF" intensity="1.9" angle="32" penumbra="0.35" decay="1.4" distance="11" position="-0.35 2.6 -3.7" rotation="-85 0 0"></a-light>
+      <a-light type="spot" color="#F8FAFF" intensity="1.9" angle="32" penumbra="0.35" decay="1.4" distance="11" position="0 2.6 -3.7" rotation="-85 0 0"></a-light>
+      <a-light type="spot" color="#F8FAFF" intensity="1.9" angle="32" penumbra="0.35" decay="1.4" distance="11" position="0.35 2.6 -3.7" rotation="-85 0 0"></a-light>
+      <a-light type="spot" color="#F8FAFF" intensity="1.7" angle="32" penumbra="0.35" decay="1.4" distance="11" position="0.7 2.6 -3.7" rotation="-85 0 0"></a-light>
+
+      <!-- Window Glow Effect -->
+      <a-light type="point" color="#F8FAFF" intensity="0.32" decay="2" distance="3.5" position="-0.5 1.8 -3.7"></a-light>
+      <a-light type="point" color="#F8FAFF" intensity="0.32" decay="2" distance="3.5" position="0.5 1.8 -3.7"></a-light>
+      
+      <!-- Window Area Fill Light -->
+      <a-light type="spot" color="#F8FAFF" intensity="0.35" angle="115" penumbra="0.85" decay="2" distance="5.5" position="0 1.8 -3.7" rotation="-45 0 0"></a-light>
+    </a-scene>
+  </body>
+</html>
